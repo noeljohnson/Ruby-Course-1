@@ -17,17 +17,22 @@ puts("Can you guess it?")
 numGuess = 0
 guessedIt = false
 
-puts("You have #{10 - numGuess} guesses left")
-guess = gets().to_i() #to_i converts a string to a number, once it encounters a non-numeric character, it#stops converting
+while (numGuess < 10 && !(guessedIt))
 
-if (guess > target)
-  puts("Guess is high")
-elsif (guess < target)
-  puts("Guess is low")
-else
-  puts("Good job #{name}")
-  puts("You have guessed my number in #{numGuess + 1} guesses!")
-  guessedIt = true
+  puts("You have #{10 - numGuess} guesses left")
+  guess = gets().to_i() #to_i converts a string to a number, once it encounters a non-numeric character, it#stops converting
+  
+  numGuess += 1
+  if (guess > target)
+    puts("Guess is high")
+  elsif (guess < target)
+    puts("Guess is low")
+  else
+    puts("Good job #{name}")
+    puts("You have guessed my number in #{numGuess} guesses!")
+    guessedIt = true
+  end
+
 end
 
 if !(guessedIt)
