@@ -2,6 +2,8 @@
 
 class Bird
   
+  attr_reader(:name, :age)
+  
   def talk()
     puts("Chirp! Chirp!")
   end
@@ -13,7 +15,9 @@ class Bird
 end
 
 class Dog
-  
+
+  attr_reader(:name, :age)
+   
   def talk()
     puts("Bark!")
   end
@@ -25,7 +29,9 @@ class Dog
 end
 
 class Cat
-  
+
+  attr_reader(:name, :age)
+   
   def talk()
     puts("Meow!")
   end
