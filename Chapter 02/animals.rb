@@ -4,6 +4,20 @@ class Bird
   
   attr_reader(:name, :age)
   
+  def name=(value)
+    if (value == "")
+      raise("Invalid entry for name")
+    end
+    @name = value
+  end
+
+  def age=(value)
+    if (value < 0)
+      raise("Invalid entry for age")
+    end
+    @age = value
+  end
+
   def talk()
     puts("Chirp! Chirp!")
   end
@@ -12,12 +26,30 @@ class Bird
     puts("Flying to the #{destination}")
   end
 
+  def reportAge()
+    puts("#{@name} is #{@age} years old")
+  end
+
 end
 
 class Dog
 
   attr_reader(:name, :age)
-   
+  
+  def name=(value)
+    if (value == "")
+      raise("Invalid entry for name")
+    end
+    @name = value
+  end
+
+  def age=(value)
+    if (value < 0)
+      raise("Invalid entry for age")
+    end
+    @age = value
+  end
+
   def talk()
     puts("Bark!")
   end
@@ -26,12 +58,30 @@ class Dog
     puts("Running to the #{destination}")
   end
 
+  def reportAge()
+    puts("#{@name} is #{@age} years old")
+  end
+
 end
 
 class Cat
 
   attr_reader(:name, :age)
    
+  def name=(value)
+    if (value == "")
+      raise("Invalid entry for name")
+    end
+    @name = value
+  end
+
+  def age=(value)
+    if (value < 0)
+      raise("Invalid entry for age")
+    end
+    @age = value
+  end
+
   def talk()
     puts("Meow!")
   end
@@ -40,14 +90,10 @@ class Cat
     puts("Running to the #{destination}")
   end
 
+  def reportAge()
+    puts("#{@name} is #{@age} years old")
+  end
+
 end
-
-bird = Bird.new()
-dog = Dog.new()
-cat = Cat.new()
-
-bird.move("tree")
-dog.talk()
-cat.move("house")
 
 ##TYJC
