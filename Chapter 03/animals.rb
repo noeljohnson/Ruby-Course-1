@@ -41,6 +41,10 @@ class Bird < Animal
 end
 
 class Dog < Animal
+  
+  def to_s()
+    print("#{@name} the dog, age #{@age}")
+  end
 
 end
 
