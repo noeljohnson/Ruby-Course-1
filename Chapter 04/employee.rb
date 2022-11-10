@@ -24,8 +24,8 @@ class Employee
 
   def print_pay_stub()
     puts("Name : #{@name}")
-    payForPeriod = @salary / 365 * 14
-    puts("Pay this period $#{payForPeriod}")
+    payForPeriod = @salary / 365.0 * 14
+    puts(format("Pay this period $%.2f", payForPeriod))
   end
 
 end
