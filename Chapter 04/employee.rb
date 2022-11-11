@@ -3,6 +3,11 @@
 class Employee
   
   attr_reader(:name, :salary)
+  
+  def initialize(name = "Anonymous", salary = 0)
+    @name = name
+    @salary = salary
+  end
 
   def name=(value)
     
