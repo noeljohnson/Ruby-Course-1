@@ -5,8 +5,8 @@ class Employee
   attr_reader(:name, :salary)
   
   def initialize(name = "Anonymous", salary = 0)
-    @name = name
-    @salary = salary
+    self.name=(name)
+    self.salary=(salary)
   end
 
   def name=(value)
@@ -28,8 +28,8 @@ class Employee
   end
 
   def print_pay_stub()
-    puts("Name : #{@name}")
-    payForPeriod = @salary / 365.0 * 14
+    puts("Name : #{self.name()}")
+    payForPeriod = self.salary() / 365.0 * 14
     puts(format("Pay this period $%.2f", payForPeriod))
   end
 
