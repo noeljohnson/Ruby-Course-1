@@ -57,6 +57,18 @@ class HourlyEmployee < Employee
     self.hourlyWage=(hourlyWage)
     self.hoursPerWeek=(hoursPerWeek)
   end
+
+  def self.securityGuard(name)
+    return(HourlyEmployee.new(name, 19.25, 30))
+  end
+
+  def self.cashier(name)
+    return(HourlyEmployee.new(name, 12.75, 25))
+  end
+
+  def self.janitor(name)
+    return(HourlyEmployee.new(name, 10.50, 20))
+  end
   
   def hourlyWage=(hourlyWage)
     if (hourlyWage < 0)
