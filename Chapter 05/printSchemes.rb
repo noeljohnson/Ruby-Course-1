@@ -6,7 +6,22 @@ def printSavings(arr)
   }
 end
 
-arr = [192, 210.4, 318]
-printSavings(arr)
+def total(arr)
+
+  amount = 0
+  arr.each(){|elem|
+    amount += elem
+  }
+
+  return (amount)
+
+end
+
+def refund(arr)
+  
+  return (-1 * total(arr))
+
+end
+
 
 ## TYJC
