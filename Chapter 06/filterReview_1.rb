@@ -10,24 +10,22 @@ end
 
 res = []
 
-File.open("reviews.txt"){ |file|
+File.open("reviews.txt")(){ |file|
   res = file.readlines()
 }
 
-rel_lines = res.find_all{ |line| 
+rel_lines = res.find_all(){ |line| 
   (line.include?("Truncated"))
 }
 
-review = rel_lines.reject{ |line|
+review = rel_lines.reject(){ |line|
   line.include?("--")
 }
 
-revAdj = review.map{ |line|
-  getAdjective(line)
+revAdj = review.map(){ |line|
+  adjective = getAdjective(line)
+  "\'#{adjective.capitalize()}\'"
 }
 
 p(revAdj)
-
-p(review)
-
 ## TYJC
