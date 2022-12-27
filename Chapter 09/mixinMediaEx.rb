@@ -3,12 +3,7 @@
 module AcceptComments
   
   def comments()
-    if @comments
-      return(@comments)
-    else
-      @comments = []
-      return(@comments)
-    end
+    @comments ||= []
   end
 
   def add_comments(comment)
@@ -33,6 +28,14 @@ class Song < Clip
   attr_accessor(:beats_per_minute)
 end
 
+class Photo
+  include AcceptComments
+
+  def show()
+    puts("Displaying #{self.object_id()}")
+  end
+end
+
 video = Video.new()
 video.play()
 video.add_comments("Cool slow motion effect")
@@ -43,4 +46,10 @@ song = Song.new()
 song.play()
 song.add_comments("Awesome beat.")
 p(song.comments())
+
+photo = Photo.new()
+photo.add_comments("Beautiful colors.")
+p(photo.comments())
+photo.show()
+
 ## TYJC
